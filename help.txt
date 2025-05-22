@@ -1,0 +1,23 @@
+https://claude.ai/chat/5655ddc5-4b9e-4759-bd86-1c096474049c
+# Tạo và cài đặt môi trường với uv (công cụ được khuyến nghị)
+uv init mcp-server-demo
+cd mcp-server-demo
+
+# Thêm MCP vào dependencies
+uv add "mcp[cli]"
+
+# Hoặc sử dụng pip
+pip install "mcp[cli]"
+
+Sau khi code xong mcp
+
+Chạy và kiểm tra MCP Server
+Khi đã có mã server, bạn có thể chạy và kiểm thử bằng các cách:
+bash# Cài đặt trực tiếp vào Claude Desktop
+mcp install server.py
+
+# Hoặc kiểm tra với MCP Inspector
+mcp dev server.py
+
+# Hoặc chạy trực tiếp
+python server.py
