@@ -69,6 +69,14 @@ def main(transport: str, port: int) -> int:
 
             return [TextContent(type="text", text=weather)]
         elif name == "search_users":
+            # {
+            #     "query": {
+            #         "search_criteria": {
+            #             "field": "cuong"
+            #         },
+            #         "limit": 10
+            #     }
+            # }
             print(arguments)
             # Kiểm tra các đối số truyền vào tool có đủ không
             if "search_criteria" not in arguments:
@@ -93,7 +101,7 @@ def main(transport: str, port: int) -> int:
             # Tìm kiếm linh hoạt
             result = api_client.search_users_flexible(user_data, text_search)
             print(result)
-            result = result[:limit]  # Giới hạn kết quả từ 0 tới limit
+            # result = result[:limit]  # Giới hạn kết quả từ 0 tới limit
             if not result:
                 msg_result = json.dumps(text_search, ensure_ascii=False)
                 return [TextContent(type="text", text=f"Không tìm thấy user nào với tiêu chí:{msg_result}")]
