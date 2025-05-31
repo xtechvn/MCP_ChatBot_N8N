@@ -20,7 +20,7 @@ import api_conn
 
 @click.command()
 @click.option("--transport", type=click.Choice(["stdio", "sse"]), default="sse")
-@click.option("--port", default=8001, help="Port to listen on for SSE")
+@click.option("--port", default=8002, help="Port to listen on for SSE mcp")
 def main(transport: str, port: int) -> int:
     # Tạo MCP Server
     app = Server("simple-info-server")
